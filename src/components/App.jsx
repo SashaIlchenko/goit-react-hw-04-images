@@ -35,7 +35,7 @@ export default function App() {
           setStatus(Status.REJECTED);
           return toast.error(`no picture with name ${imageName}`);
         }
-        setImages([...images, ...newImages]);
+        setImages(prev => [...prev, ...newImages]);
         setStatus(Status.RESOLVED);
       } catch (error) {
         setStatus(Status.REJECTED);
